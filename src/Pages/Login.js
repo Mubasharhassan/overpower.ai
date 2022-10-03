@@ -1,86 +1,100 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
-import { Box, Button, Container } from '@mui/material'
-import logo from '../Assets/Images/Overpower-Vertical-Web-150px.png'
+import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { useForm } from "react-hook-form";
+import { Box, Button, Container } from "@mui/material";
+import logo from "../Assets/Images/Overpower-Vertical-Web-150px.png";
+import axios from "axios";
 
-
-
+// const client = axios.create({
+//   baseURL: "https://admin-auth.herokuapp.com/auth/login",
+// });
 export default function Login() {
+  //   const navigate = useNavigate();
 
-    const getDomainInfo = async () => {
+  //   const onSubmit = async (values) => {
+  //     console.log(values);
+  //     navigate("/dashboard");
+  //   };
 
-        const [loading, setLoading] = useState(false);
-        try {
-            setLoading(true); // Set loading before sending API request
-            const res = await axios.get('api/search/', {
-                params: { keyword },
-            });
-            const response = res; // Response received
-            setLoading(false); // Stop loading
-        } catch (error) {
-            setLoading(false); // Stop loading in case of error
-            console.error(error);
-        }
-    };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [posts, setPosts] = useState([]);
+  const Data = {
+    email: email,
+    password: password,
+  };
 
-    const {
-        register,
-        handleSubmit,
-        loading,
-        formState: { errors }
-    } = useForm()
+  //   const handleClick = () => {
+  //     console.log(Data);
+  //     // const {email:email , password:password}
+  //   };
 
-    const navigate = useNavigate()
+  useEffect(() => {
+    client.get("?_limit=10").then((response) => {
+      setPosts(response.data);
+    });
+  }, []);
 
-    const onSubmit = async (values) => {
-        console.log(values)
-        navigate('/dashboard')
+  const client = axios.create({
+    baseURL: "https://admin-auth.herokuapp.com/auth/login",
+  });
+
+  const handleClick = async () => {
+    console.log(Data);
+    try {
+      let response = await client.post("", { Data });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
     }
+    setPosts([response.data, ...posts]);
+  };
 
-    return (
-        <div className='login'>
-            <Container component='main' maxWidth='xs'>
-                <Box className='box'>
-                    <img src={logo} alt={logo} />
-                    <Box
-                        component='form'
-                        className='form'
-                        onClick={handleSubmit(onSubmit)}
-                    >
-                        <h1>Please Fill to Sign In</h1>
-                        <div className='login-input'>
-                            <input
-                                placeholder='Email'
-                                {...register('email', {
-                                    required: 'Must enter your email',
-                                    pattern: {
-                                        value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
-                                        message: 'Please enter a valid email'
-                                    }
-                                })}
-                            />
-                        </div>
-                        {errors.email && <p className='error'>{errors.email.message}</p>}
-                        <div className='login-input'>
-                            <input
-                                type='password'
-                                placeholder='Password'
-                                {...register('password', {
-                                    required: 'Please enter a your password'
-                                })}
-                            />
-                        </div>
-                        {errors.password && errors.password.type === 'required' && (
-                            <p className='error'>Password is required.</p>
-                        )}
-                        <Button type='submit' fullWidth variant='contained'>
-                            {loading ? <>Loading..</> : <> Login</>}
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
-                        </Button>
-                    </Box>
-                </Box>
-            </Container>
-        </div>
-    )
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  return (
+    <div className="login">
+      <Container component="main" maxWidth="xs">
+        <Box className="box">
+          <img src={logo} alt={logo} />
+          <Box component="form" className="form">
+            <h1>Please Fill to Sign In</h1>
+            <div className="login-input">
+              <input
+                placeholder="Email"
+                onChange={handleEmailChange}
+                value={email}
+              />
+            </div>
+            {/* {errors.email && <p className="error">{errors.email.message}</p>} */}
+            <div className="login-input">
+              <input
+                type="password"
+                placeholder="Password"
+                onChange={handlePasswordChange}
+                value={password}
+              />
+            </div>
+            {/* {errors.password && errors.password.type === "required" && (
+            <p className="error">Password is required.</p>
+            )} */}
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              onClick={handleClick}
+            >
+              {/* {loading ? <>Loading..</> : <> Login</>} */}
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+    </div>
+  );
 }
