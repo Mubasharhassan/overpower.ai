@@ -11,3 +11,87 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.login .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .box img {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+
+.login .box .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .box .form h1 {
+  color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #999999;
+}
+
+.login .box .form .login-input {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #f12d37;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .box .form .login-input input {
+  padding: 0rem 0.5rem;
+  font-size: 1rem;
+  color: #999999;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  height: 3rem;
+}
+
+.login .box .form .login-input input::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.login .box .form button {
+  color: #ffffff;
+  background-color: #f12d38;
+  width: 100%;
+  height: 2.7rem;
+  margin-top: 1.5rem;
+}
+
+.form {
+  width: 100%;
+
+}
+
+.form h1 {
+  color: #ffffff;
+}
+
+.passowrd-lebal {
+  color: #ffffff;
+}

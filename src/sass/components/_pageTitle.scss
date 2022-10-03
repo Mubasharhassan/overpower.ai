@@ -1,0 +1,30 @@
+.page-title {
+    @include flex-between-center;
+    padding: 1rem;
+
+    h1 {
+        color: $text-color-secondary;
+        @include display-jost-12;
+        font-size: 1.6rem;
+    }
+
+    div {
+        @include flex-center-center;
+        gap: 1rem;
+
+        img {
+            width: 2.5rem;
+        }
+
+        h2 {
+            color: $text-color-secondary;
+            @include display-jost-12;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+}

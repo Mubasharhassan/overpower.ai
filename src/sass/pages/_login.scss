@@ -1,0 +1,56 @@
+.login {
+    min-height: 100vh;
+    @include flex-center-center;
+
+    .box {
+        @include flex-column;
+
+        img {
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 3rem;
+            cursor: pointer;
+        }
+
+        .form {
+            width: 100%;
+            @include flex-column;
+
+            h1 {
+                color: $text-color;
+                @include display-ubuntu-20;
+                color: $text-color-secondary;
+            }
+
+            .login-input {
+                width: 100%;
+                border-radius: 5px;
+                box-shadow: 1px 1px 3px #f12d37;
+                margin-top: 1.5rem;
+                @include flex-center-center;
+
+                input {
+                    padding: 0rem 0.5rem;
+                    font-size: 1rem;
+                    color: $text-color-secondary;
+                    border: none;
+                    background-color: transparent;
+                    width: 100%;
+                    height: 3rem;
+                }
+
+                input::-webkit-input-placeholder {
+                    color: $text-color-secondary;
+                }
+            }
+
+            button {
+                color: $text-color;
+                background-color: $primary-color;
+                width: 100%;
+                height: 2.7rem;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,540 @@
+@import url("https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap");
+
+body {
+    background-color: #000 !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.primary-color {
+    color: #f12d38;
+}
+
+.white-color {
+    color: #fff;
+}
+
+.gray-color {
+    color: #d4d4d4;
+}
+
+.red-color {
+    color: red;
+}
+
+.white-color {
+    color: #ffffff;
+}
+
+.dark-gray-color {
+    color: #999999;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.navlinks {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.navlinks-active {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: rgb(75, 74, 74);
+}
+
+.close-modal-btn {
+    background-color: transparent;
+    border: none;
+    color: #d4d4d4;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.close-modal-btn:hover {
+    color: #f4f0f0;
+}
+
+.bg-gray {
+    background-color: #191919;
+}
+
+.font-300 {
+    font-weight: 300;
+}
+
+.font-400 {
+    font-weight: 400;
+}
+
+.font-500 {
+    font-weight: 500;
+}
+
+.font-600 {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.errors {
+    color: red;
+}
+
+.h-20 {
+    height: 1.25rem;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.px-2 {
+    padding: 0rem 2rem;
+}
+
+.py-1 {
+    padding: 1rem 0rem;
+}
+
+.py-3 {
+    padding: 3rem 0rem;
+}
+
+.py-5 {
+    padding: 5rem 0rem;
+}
+
+.px-1 {
+    padding: 0 1rem;
+}
+
+.my-1 {
+    margin: 1rem 0rem !important;
+}
+
+.my-2 {
+    margin: 2rem 0rem;
+}
+
+.my-4 {
+    margin: 4rem 0rem;
+}
+
+.mt-1 {
+    margin-top: 1rem !important;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-self-start {
+    justify-self: flex-start;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.gap-025 {
+    gap: 0.25rem;
+}
+
+.gap-05 {
+    gap: 0.5rem;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.gap-2 {
+    gap: 2rem;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.hr {
+    border: 1px solid #999999;
+    width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* MOBILE */
+html {
+    font-size: 12px;
+}
+
+/* TABLET */
+@media only screen and (min-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* X-LARGE */
+@media only screen and (min-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    html {
+        font-size: 6px;
+    }
+}
+
+.error {
+    color: #b71c1c;
+    align-self: start;
+}
+
+.heading-1 {
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: #999999;
+    font-size: 1.6rem;
+}
+
+.title-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0.7rem 1rem;
+    gap: 0.5rem;
+}
+
+.title-logo img {
+    width: 2.5rem;
+}
+
+.title-logo h2 {
+    color: #999999;
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.form-section {
+    padding: 1rem;
+    border: 1px solid #999999;
+    margin: 1rem 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.form-section .form-fields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-section .form-fields .form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 5rem;
+}
+
+.form-section .form-fields .form-input small {
+    color: #fff;
+}
+
+.form-label {
+    color: #999999;
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.input-white {
+    background-color: #f5f5f5;
+    box-shadow: none;
+    color: #565656;
+    height: 2.5rem;
+    font-size: 1rem !important;
+    padding: 1.07rem 0.5rem;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    min-width: 280px;
+}
+
+.select-white {
+    background-color: #f5f5f5;
+    box-shadow: none;
+    color: #565656;
+    font-size: 1rem !important;
+    padding: 0.5rem;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    min-width: 280px;
+}
+
+.submit-btn {
+    max-width: 200px;
+    min-width: 150px;
+    width: 100% !important;
+    align-self: center;
+}
+
+button:disabled,
+button[disabled] {
+    color: lightgray;
+    cursor: progress;
+}
+
+input:disabled,
+input[disabled] {
+    color: lightgray;
+    cursor: not-allowed;
+}
+
+.red-border-input {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #f12d37;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red-border-input input {
+    padding: 0rem 0.5rem;
+    font-size: 1rem;
+    color: #999999;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    height: 3rem;
+}
+
+.red-border-input input::-webkit-input-placeholder {
+    color: #999999;
+}
+
+.table-img {
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+}
+
+.page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.page-title h1 {
+    color: #999999;
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    font-size: 1.6rem;
+}
+
+.page-title div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page-title div img {
+    width: 2.5rem;
+}
+
+.page-title div h2 {
+    color: #999999;
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.page-title div button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.iframes-modal-fields {
+    background-color: rgb(98, 94, 94);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .box img {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+}
+
+.login .box .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .box .form h1 {
+    color: #ffffff;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2rem;
+    line-height: 1.4;
+    color: #999999;
+}
+
+.login .box .form .login-input {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #f12d37;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .box .form .login-input input {
+    padding: 0rem 0.5rem;
+    font-size: 1rem;
+    color: #999999;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    height: 3rem;
+}
+
+.login .box .form .login-input input::-webkit-input-placeholder {
+    color: #999999;
+}
+
+.login .box .form button {
+    color: #ffffff;
+    background-color: #f12d38;
+    width: 100%;
+    height: 2.7rem;
+    margin-top: 1.5rem;
+}
+
+/*# sourceMappingURL=main.css.map */
