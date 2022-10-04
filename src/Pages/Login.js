@@ -1,53 +1,30 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { useForm } from "react-hook-form";
 import { Box, Button, Container } from "@mui/material";
 import logo from "../Assets/Images/Overpower-Vertical-Web-150px.png";
 import axios from "axios";
 
-// const client = axios.create({
-//   baseURL: "https://admin-auth.herokuapp.com/auth/login",
-// });
 export default function Login() {
-  //   const navigate = useNavigate();
-
-  //   const onSubmit = async (values) => {
-  //     console.log(values);
-  //     navigate("/dashboard");
-  //   };
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [posts, setPosts] = useState([]);
   const Data = {
     email: email,
     password: password,
   };
 
-  //   const handleClick = () => {
-  //     console.log(Data);
-  //     // const {email:email , password:password}
-  //   };
-
-  useEffect(() => {
-    client.get("?_limit=10").then((response) => {
-      setPosts(response.data);
-    });
-  }, []);
-
   const client = axios.create({
     baseURL: "https://admin-auth.herokuapp.com/auth/login",
   });
 
-  const handleClick = async () => {
+  const handleClick = async (e) => {
+    e.preventDefault()
     console.log(Data);
     try {
-      let response = await client.post("", { Data });
+      let response = await client.post("",  Data );
       console.log(response);
     } catch (error) {
       console.log(error);
     }
-    setPosts([response.data, ...posts]);
   };
 
   const handleEmailChange = (event) => {
@@ -91,6 +68,7 @@ export default function Login() {
               onClick={handleClick}
             >
               {/* {loading ? <>Loading..</> : <> Login</>} */}
+              Login
             </Button>
           </Box>
         </Box>
