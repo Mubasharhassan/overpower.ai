@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles/main.css';
 import Login from './Pages/Login';
-
 import Users from './Pages/Dashboard/User/Users';
 import Tenants from './Pages/Dashboard/User/Tenants';
 import Iframes from './Pages/Dashboard/User/Iframes';

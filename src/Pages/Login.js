@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-// import { CLoadingButton } from '@coreui/react-pro';
 import 'react-toastify/dist/ReactToastify.css';
 import { Box, Button, Container } from '@mui/material';
 import logo from '../Assets/Images/Overpower-Vertical-Web-150px.png';
 import axios from 'axios';
-// import ButtonLoader from './ButtonLoader';
+import jwtDecode from 'jwt-decode';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [authenticated, setauthenticated] = useState(
+    localStorage.getItem(localStorage.getItem('token') || false)
+  );
   const Data = {
     email: email,
     password: password
@@ -18,6 +21,7 @@ export default function Login() {
   const client = axios.create({
     baseURL: 'http://192.168.100.16:8000/auth/login'
   });
+  const navigate = useNavigate();
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -25,12 +29,13 @@ export default function Login() {
     try {
       let response = await client.post('', Data);
       setLoading(false);
-      console.log(response);
-      toast.error('Log in successfully!');
+      console.log(response.data.token);
+      localStorage.setItem('token', JSON.stringify(response.data.token));
+      navigate('/dashboard');
     } catch (error) {
       console.log(error);
       setLoading(false);
-      toast.error('Error Error!');
+      toast.error('Log in successfully!!');
     }
   };
 
